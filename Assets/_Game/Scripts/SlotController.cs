@@ -7,30 +7,27 @@ public class SlotController : MonoBehaviour
 {
     public GameObject entrancePrefab;
     public GameObject exitPrefab;
-    public Transform[] _carsSlotArray = new Transform[8];
+    public Transform[] carsSlotArray = new Transform[8];
     private GameObject _entranceHud, _exitHud;
 
     public void Start()
     {
         for (int i = 0; i < 8; i++)
         {
-            _carsSlotArray[i] = transform.GetChild(i);
+            carsSlotArray[i] = transform.GetChild(i);
         }
-        
     }
-
     
     public Transform CurrentEntrance(int index)
     {
-        return _carsSlotArray[index].GetChild(0);
+        return carsSlotArray[index].GetChild(0);
     }
-
-   
+    
     public void CreatEntranceAndExitHud(int index)
     {
-        _entranceHud = Instantiate(entrancePrefab, _carsSlotArray[index].GetChild(0).position,
-                 Quaternion.Euler(0,0,0), _carsSlotArray[index].GetChild(0));
-        _exitHud = Instantiate(exitPrefab, _carsSlotArray[index].GetChild(1));
+        _entranceHud = Instantiate(entrancePrefab, carsSlotArray[index].GetChild(0).position,
+                 Quaternion.Euler(0,0,0), carsSlotArray[index].GetChild(0));
+        _exitHud = Instantiate(exitPrefab, carsSlotArray[index].GetChild(1));
     }
 
     public void ClearPart()
@@ -39,8 +36,4 @@ public class SlotController : MonoBehaviour
         Destroy(_exitHud);
     }
 
-    public void SavePart()
-    {
-        
-    }
 }

@@ -9,16 +9,16 @@ public class Slot : MonoBehaviour
 
     private void Awake()
     {
-        if (carFirstDirection == CarFirstDirection.Up)
+        if (carFirstDirection == CarFirstDirection.Left)
             transform.rotation = Quaternion.Euler(0, -90, 0);
         
-        else if(carFirstDirection == CarFirstDirection.Down)
+        else if(carFirstDirection == CarFirstDirection.Right)
             transform.rotation = Quaternion.Euler(0, 90, 0);
         
-        else if(carFirstDirection == CarFirstDirection.Right)
+        else if(carFirstDirection == CarFirstDirection.Up)
             transform.rotation = Quaternion.Euler(0, 0, 0);
         
-        else if(carFirstDirection == CarFirstDirection.Left)
+        else if(carFirstDirection == CarFirstDirection.Down)
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 }
